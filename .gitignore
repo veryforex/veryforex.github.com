@@ -1,0 +1,6 @@
+#jekyll
+_site/**
+
+**.sw?
+
+o-rdoc/**
