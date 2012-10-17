@@ -1,127 +1,174 @@
----
-author: 21hard
-desc: 硬件技术分享
----
-<!doctype html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    {% if page.title != null %}
-    <title>{{page.title}} | {{ page.desc }} - {{ page.author }}</title>
-    {% else %}
-    <title>{{ page.desc }} - {{ page.author }}</title>
-    {% endif %}
-    <link rel="stylesheet" href="/stylesheets/default.css" type="text/css" media="screen" charset="utf-8"/>
-    <link rel="stylesheet" href="/stylesheets/styles.css" type="text/css" media="screen" charset="utf-8"/>
-    <link rel="stylesheet" href="/stylesheets/syntax.css" type="text/css" media="screen" charset="utf-8"/>
-    <link rel="stylesheet" href="/stylesheets/print.css" type="text/css" media="print" charset="utf-8"/>
-    <!--[if IE]><script src="/javascripts/html5.js"></script><![endif]-->
-  </head>
-  <body>
-    <div id="wrapper"><!-- #wrapper -->
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+<head>
+<title>VeryForex - Enjoy Forex Life!
+</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+	<link rel="stylesheet" href="/css/screen.css" type="text/css" media="screen" />
+	<link rel="stylesheet" href="/css/print.css" type="text/css" media="print" />
+	<!--<base   href="http://www.veryforex.com/"> -->
+	<base   href=/>
+</head>
+<body>
 
-      <header><!-- header -->
-      <h1><a href="/">{{ page.author }}</a></h1>
-      <h2><a href="/">{{ page.desc }}</a></h2>
-      </header><!-- end of header -->
+<div id="breadcrumb">
+	{% if page.category == 'cot' %}
+		<a href='/'>Home</a>&nbsp;&#187;&nbsp;<a href='/cot/index.html'>COT Data  </a>&nbsp;&#187;&nbsp;<a href={{ page.url }}>{{ page.title }}</a>
+	{% elsif  page.category == 'category' %}
+		<a href='/'>Home</a>&nbsp;&#187;&nbsp;<a href='/category/index.html'>Indicators </a>&nbsp;&#187;&nbsp;<a href={{ page.url }}>{{ page.title }}</a>
+	{% else %}
+		<a href='/'>Home</a>&nbsp;&#187;&nbsp;<a href='/category/index.html'>Indicators </a>&nbsp;&#187;&nbsp;<a href='/category/{{ page.category  }}.html'>{{ page.category  }}  </a>&nbsp;&#187;&nbsp;<a href={{ page.url }}>{{ page.title }}</a>
+	{% endif %}
+</div>
 
-      <nav><!-- top nav -->
-      <div class="menu">
-        <ul>
-          <li><a href="/">首页</a></li>
-          <li><a href="/blogs.html">文章列表</a></li>
-          <li><a href="/about.html">关于我</a></li>
-        </ul>
-      </div>
-      </nav><!-- end of top nav -->
+<div id="pagecontainer">
+	<div id="headersection">
+		<h1><a href="/" id="headersectionlogo">VeryForex.com</a></h1>
+		<div id="headersectionbar">
+			<h2>&nbsp;&nbsp;&nbsp;&nbsp;Enjoy Forex Life</h2>
+		</div>
+	</div>
 
-      <section id="main"><!-- #main content and sidebar area -->
-      <div id="content">
-        <article class="articlecontent">
-          {{ content }}
-        </article>
-      </div>
+	<hr class="nodisp" />
 
-      <aside>
-      <section>
-      <h3>Who's 21hard</h3>
-      <p>email:<a href="mailto:flray99@gmail.com">flyray99#gmail.com</a></p>
-      <p>
-        <a href="http://github.com/21hard">github</a>
-      </p>
-      </section>
+	<div id="leaderboardcontainer">
+<!--
+		<div id="leaderboard">
+		</div>
+ -->
+	</div>
 
+	<hr class="nodisp" />
 
-      <section>
-      <h3>Categories</h3>
-      <ul>
-        {% for category in site.categories %}
-        <li><a href="/{{category | first}}.html">{{category | first}} ({{category | last | size }})</a></li>
-        {% endfor %}
-      </ul>
-      </section>
+	<div id="contentcolumn">
+
+        <div id="socialBookmarks">
+        </div>  <!-- socialBookmarks such as "Add this" -->
+
+	{{content}}
+	
+	<hr />
+	{% if page.date %}
+		updated <em> {{ page.date | date_to_long_string }} </em>	{% endif %}
+	
+<div id="bottomad"></div> <!-- bottomad  -->
 
 
-      <section>
-      <div id="github-badge">
-      </div>
-      </section>
-      <script type="text/javascript" charset="utf-8">
-      GITHUB_USERNAME = "21hard";
-      </script>
-      <script src="http://drnicjavascript.rubyforge.org/github_badge/dist/github-badge-launcher.js" type="text/javascript"></script>
+<div id="leftcolumn">
+	<div id="mainnavi">
+		<div class="leftcolumnbox">
+			<h2>Menu</h2>
+			<div class="leftmenucontent">
+				<ul class='lev1mainmenulist'>
+					{% if  page.name == 'index' and  page.category == 'category' %}
+						<li class='lev1mainmenuitem'><a href='/category/index.html' class='mainmenulinkselected'>Indicators</a>
+					{% else %}
+						<li class='lev1mainmenuitem'><a href='/category/index.html' class='mainmenulink'>Indicators</a>
+					{% endif %}
+					
+					<ul class='lev2mainmenulist'>
+						{% for category in site.categories %}
+							{% if page.name == category.first %}
+								<li class="lev2mainmenuitem"><a href="/category/{{category | first}}.html" class='mainmenulinkselected'>{{category | first}} ({{category | last | size }})</a></li>
+							{% else %}
+								<li class="lev2mainmenuitem"><a href="/category/{{category | first}}.html" class='mainmenulink' >{{category | first}} ({{category | last | size }})</a></li>
+							{% endif %}
+						{% endfor %}
+					</ul>
+					</li>  <!-- lev1mainmenulist -->
+					
+					{% if  page.name == 'index' and  page.category == 'cot' %}
+					<li class='lev1mainmenuitem'><a href='/cot/index.html' class='mainmenulinkselected'>COT Data Service</a>					
+					{% else %}
+					<li class='lev1mainmenuitem'><a href='/cot/index.html' class='mainmenulink'>COT Data Service</a>					
+					{% endif %}
+					  <ul class='lev2mainmenulist'>
+					    {% if  page.name == 'index' %}
+							<li class='lev2mainmenuitem'><a href='/cot/index.html' class='mainmenulinkselected' >Introduction</a></li>
+						{% else %}
+							<li class='lev2mainmenuitem'><a href='/cot/index.html' class='mainmenulink' >Introduction</a></li>
+						{% endif %}
+						
+					    {% if  page.name == 'download' %}
+							<li class='lev2mainmenuitem'><a href='/cot/download.html' class='mainmenulinkselected' >How to download</a></li>
+						{% else %}
+							<li class='lev2mainmenuitem'><a href='/cot/download.html' class='mainmenulink' >How to download</a></li>
+						{% endif %}
+						
+					    {% if  page.name == 'faq' %}
+							<li class='lev2mainmenuitem'><a href='/cot/faq.html' class='mainmenulinkselected' >FAQ</a></li>
+						{% else %}
+							<li class='lev2mainmenuitem'><a href='/cot/faq.html' class='mainmenulink' >FAQ</a></li>
+						{% endif %}
+					    {% if  page.name == 'subscribe' %}
+							<li class='lev2mainmenuitem'><a href='/cot/subscribe.html' class='mainmenulinkselected' >How to subscribe</a></li>
+						{% else %}
+							<li class='lev2mainmenuitem'><a href='/cot/subscribe.html' class='mainmenulink' >How to subscribe</a></li>
+						{% endif %}
+					    {% if  page.name == 'schedule' %}
+							<li class='lev2mainmenuitem'><a href='/cot/schedule.html' class='mainmenulinkselected' >Update Schedule</a></li>
+						{% else %}
+							<li class='lev2mainmenuitem'><a href='/cot/schedule.html' class='mainmenulink' >Update Schedule</a></li>
+						{% endif %}												
+					</ul> <!-- lev2mainmenulist -->							
+					</li> <!-- lev1mainmenulist -->
+					
+					{% if  page.name == 'links' %}
+						<li class='lev1mainmenuitem'><a href='/links.html' class='mainmenulinkselected' >Links</a></li>
+					{% else %}
+						<li class='lev1mainmenuitem'><a href='/links.html' class='mainmenulink' >Links</a></li>
+					{% endif %}		
+				</ul>  <!-- lev1mainmenulist -->
+			</div> <!--leftmenucontent-->
+		</div>  <!--leftcolumnbox-->
+	</div><!--mainnavi-->
+  
+	<hr class="dnone" />
+	<hr class="dnone" />
+	<div class='leftcolumnbox'><h2>Subscribe COT Data</h2>
+	<center>
+<p></p>
+<form action="https://www.paypal.com/cgi-bin/webscr" method="post">
+<input type="hidden" name="cmd" value="_s-xclick">
+<input type="hidden" name="hosted_button_id" value="7279035">
+<input type="image" src="/img/x-click-but20.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
+<img alt="" border="0" src="/img/pixel.gif" width="1" height="1">
+</form>
+<p></p>
+Subscribe email:
+<script type="text/javascript">
+<!-- 
+emailAddr=('subscribe@' + 'veryforex' + '.' + 'com')
 
-      </aside>
+document.write('<A href="mailto:' + emailAddr + '">' + emailAddr + '</a>')
+ //-->
+  </script>
+  
+  <noscript>
+      <em>This Email address is protected by JavaScript.  Either enable JavaScript for a link or decipher this: subscribe at veryforex dot com to contact us.</em>
+    </noscript>
+  
 
-      </section><!-- end of #main content and sidebar-->
+	  </div>
+	</center>
+	</div>
+</div> <!-- leftcolumn -->
+	
+</div> <!-- contentcolumn -->
 
-      <footer>
-      <section id="footer-area">
-
-      <section id="footer-outer-block">
-      <aside class="footer-segment">
-      <h4>Friends</h4>
-      <ul>
-        <li><a href="http://21hard.cn">21hard博客</a></li>
-      </ul>
-      </aside><!-- end of #first footer segment -->
-
-      <aside class="footer-segment">
-      <h4>Blogroll</h4>
-      <ul>
-        <li><a href="http://www.williamlong.info">月光博客</a></li>
-      </ul>
-      </aside><!-- end of #second footer segment -->
-
-      <aside class="footer-segment">
-      <h4>Coolness</h4>
-      <ul>
-        <li><a href="http://www.iqiyi.com">奇艺</a></li>
-        <li><a href="http://github.com">GitHub</a></li>
-      </ul>
-      </aside><!-- end of #third footer segment -->
-
-      <aside class="footer-segment">
-      <h4>Encourage</h4>
-      <p>合作. 分享. 理解. 同行.</p>
-      </aside><!-- end of #fourth footer segment -->
-
-      </section><!-- end of footer-outer-block -->
-
-      </section><!-- end of footer-area -->
-      </footer>
+	<hr class="dnone" />
+	<hr class="dnone" />
+	<div id="pagefooter">
+		<hr class="dnone" />
+		<a href="./privacy.html">Privacy Statement</a> | <a href="./tos.html">Terms of Use</a>
+	</div> 
+		
+</div> <!-- pagecontainer -->
 
 
-    <script>
-      var _gaq = [['_setAccount', 'UA-29684193-1'], ['_trackPageview']];
-      (function(d, t) {
-        var g = d.createElement(t),
-        s = d.getElementsByTagName(t)[0];
-        g.async = true;
-        g.src = '//www.google-analytics.com/ga.js';
-        s.parentNode.insertBefore(g, s);
-      })(document, 'script');
-    </script>
-    <!-- Free template created by http://freehtml5templates.com -->
-  </body>
+<hr class="dnone" />
+<div id="rightcolumn"></div>
+
+</body>
 </html>

@@ -1,4 +1,20 @@
 ---
 layout: default
 ---
-{% include post.html %}
+
+	<div class="contentcolumn">
+		<h2><a href="{{ page.url }}" title="{{ page.title }}">{{ page.title }}</a> <g:plusone size="medium"></g:plusone></h2>
+		<span style="float:right">{{ page.date | date_to_string }}</span>
+		<div class="entry">
+			{{content}}
+		</div>
+		
+		<div class="navigation">
+	    {% if page.next %}
+	      <a class="next" href="{{ page.next.url }}" rel="bookmark">&laquo;&nbsp;{{ page.next.title | truncatewords:5 }}</a>
+	    {% endif %}
+	    {% if page.previous %}
+	    	<a class="prev" href="{{ page.previous.url }}" rel="bookmark" style="float:right">{{ page.previous.title | truncatewords:5 }}&nbsp;&raquo;</a>
+	    {% endif %}
+  	</div>
+  </div>
