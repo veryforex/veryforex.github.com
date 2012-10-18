@@ -21,7 +21,7 @@ Q. When will I get the data?
 ----------------------------------
 A. CFTC publishes the Commitments of Traders Report each week. the report is usually released on Friday afternoon, Federal holidays may delay release by one day, ForexCake.com will deliver the updated data to you shortly afterwards.
 
-The following link is a tentative schedule of releases through 2012: [release schedule](/cot/schedule.htm).
+The following link is a tentative schedule of releases through 2012: [release schedule](/cot/schedule.html).
 
 
 Q. How to use the data receive from VeryForex.com?

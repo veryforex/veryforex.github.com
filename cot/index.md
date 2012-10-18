@@ -16,8 +16,8 @@ Commitments of Traders(COT) data from Commodity Futures Trading Commission (CFTC
 What's VeryForex COT Data Service
 =================================
 
-VeryForex.com provide a free COT indicator to show and anylyze the COT data on your MetaTrader 4 platform, [download](/cot/download.htm) COT indicators and history COT data right now!
-For the subscription user, we bring you weekly updated COT dat via Email according to the CFTC [release schedule](/cot/schedule.htm).
+VeryForex.com provide a free COT indicator to show and anylyze the COT data on your MetaTrader 4 platform, [download](/cot/download.html) COT indicators and history COT data right now!
+For the subscription user, we bring you weekly updated COT dat via Email according to the CFTC [release schedule](/cot/schedule.html).
 
 
 How to Subscribe the Service
