@@ -1,5 +1,5 @@
 ---
-layout: cot
+layout: default
 title: tos
 name: tos
 category: cot
