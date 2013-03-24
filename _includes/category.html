@@ -2,14 +2,14 @@
 	<h1>{{ page.title }}</h1>
 </dt><br />
 <dd>
+	<div class="contentcolumn">
 	{% for post in site.categories[page.name] %}
-		<div class="contentcolumn">
 			<h2><a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a></h2>
 			<span style="float:right">{{ post.date | date_to_string }}</span>
 			<div class="entry">	<p class="postmetadata"></p> </div>
-		</div>
 		<br />
 	{% endfor %}
+	</div>
 </dd>
 
 <br />
