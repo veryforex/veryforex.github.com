@@ -3,6 +3,7 @@ layout: default
 title: Frequently asked questions
 name: faq
 category: cot
+tags: faq
 ---
 
 FAQ

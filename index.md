@@ -3,6 +3,7 @@ layout: default
 title: What's VeryForex indicators and COT data
 name: index
 category: category
+tags: index
 ---
 
 What's VeryForex Indicators

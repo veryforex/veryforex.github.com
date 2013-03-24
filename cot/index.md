@@ -1,8 +1,9 @@
 ---
 layout: default
-title: Introduce to COT data 
+title: Introduction to COT data 
 name: index
 category: cot
+tags: index introduction
 ---
 
 What's COT data

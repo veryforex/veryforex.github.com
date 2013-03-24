@@ -3,6 +3,7 @@ layout: default
 title: tos
 name: tos
 category: cot
+tags: tos
 ---
 
 Terms of Use

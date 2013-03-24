@@ -3,6 +3,7 @@ layout: default
 title: How to subscribe
 name: subscribe
 category: cot
+tags: subscribe
 ---
 
 How to subscribe to keep data up to date

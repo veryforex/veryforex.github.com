@@ -3,14 +3,15 @@
 </dt><br />
 <dd>
 	{% for post in site.categories[page.name] %}
-		<div class="posts">
+		<div class="contentcolumn">
 			<h2><a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a></h2>
 			<span style="float:right">{{ post.date | date_to_string }}</span>
-			<div class="entry">
-				<p class="postmetadata"></p>
-			</div><br />
+			<div class="entry">	<p class="postmetadata"></p> </div>
 		</div>
+		<br />
 	{% endfor %}
 </dd>
+
+<br />
 
 

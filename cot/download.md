@@ -3,6 +3,7 @@ layout: default
 title: How to download
 name: download
 category: cot
+tags: download indicators cot
 ---
 
 Download page
