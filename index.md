@@ -4,6 +4,7 @@ title: What's VeryForex indicators and COT data
 name: index
 category: category
 tags: index
+updated: 2013-3-27
 ---
 
 What's VeryForex Indicators

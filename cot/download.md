@@ -4,6 +4,7 @@ title: How to download
 name: download
 category: cot
 tags: download indicators cot
+updated: 2012-5-08
 ---
 
 Download page

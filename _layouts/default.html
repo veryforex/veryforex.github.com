@@ -17,7 +17,7 @@
 <div id="breadcrumb">
 	{% if page.category == 'cot' %}
 		<a href='/'>Home</a>&nbsp;&#187;&nbsp;<a href='/cot/index.html'>COT Data  </a>&nbsp;&#187;&nbsp;<a href={{ page.url }}>{{ page.title }}</a>
-	{% elsif  page.category == 'category' %}
+	{% elsif  page.category == 'category' or page.category == 'blog'%}
 		<a href='/'>Home</a>&nbsp;&#187;&nbsp;<a href='/category/index.html'>Indicators </a>&nbsp;&#187;&nbsp;<a href={{ page.url }}>{{ page.title }}</a>
 	{% else %}
 		<a href='/'>Home</a>&nbsp;&#187;&nbsp;<a href='/category/index.html'>Indicators </a>&nbsp;&#187;&nbsp;<a href='/category/{{ page.category  }}.html'>{{ page.category  }}  </a>&nbsp;&#187;&nbsp;<a href={{ page.url }}>{{ page.title }}</a>
@@ -52,7 +52,9 @@
 	
 	<hr />
 	{% if page.date %}
-		updated <em> {{ page.date | date_to_long_string }} </em>	{% endif %}
+		Created: <em> {{ page.date | date_to_long_string }} </em>	{% endif %}
+	{% if page.updated %}
+		&nbsp;Last updated: <em> {{ page.updated | date_to_long_string }} </em>	{% endif %}	
 	
 <div id="bottomad"></div> <!-- bottomad  -->
 
@@ -86,37 +88,37 @@
 					<li class='lev1mainmenuitem'><a href='/cot/index.html' class='mainmenulink'>COT Data Service</a>					
 					{% endif %}
 					  <ul class='lev2mainmenulist'>
-					    {% if  page.name == 'index' %}
+					    {% if  page.name == 'index' and  page.category == 'cot'%}
 							<li class='lev2mainmenuitem'><a href='/cot/index.html' class='mainmenulinkselected' >Introduction</a></li>
 						{% else %}
 							<li class='lev2mainmenuitem'><a href='/cot/index.html' class='mainmenulink' >Introduction</a></li>
 						{% endif %}
 						
-					    {% if  page.name == 'download' %}
+					    {% if  page.name == 'download' and  page.category == 'cot'%}
 							<li class='lev2mainmenuitem'><a href='/cot/download.html' class='mainmenulinkselected' >How to download</a></li>
 						{% else %}
 							<li class='lev2mainmenuitem'><a href='/cot/download.html' class='mainmenulink' >How to download</a></li>
 						{% endif %}
 						
-					    {% if  page.name == 'faq' %}
+					    {% if  page.name == 'faq' and  page.category == 'cot'%}
 							<li class='lev2mainmenuitem'><a href='/cot/faq.html' class='mainmenulinkselected' >FAQ</a></li>
 						{% else %}
 							<li class='lev2mainmenuitem'><a href='/cot/faq.html' class='mainmenulink' >FAQ</a></li>
 						{% endif %}
-					    {% if  page.name == 'subscribe' %}
+					    {% if  page.name == 'subscribe' and  page.category == 'cot'%}
 							<li class='lev2mainmenuitem'><a href='/cot/subscribe.html' class='mainmenulinkselected' >How to subscribe</a></li>
 						{% else %}
 							<li class='lev2mainmenuitem'><a href='/cot/subscribe.html' class='mainmenulink' >How to subscribe</a></li>
 						{% endif %}
-					    {% if  page.name == 'schedule' %}
-							<li class='lev2mainmenuitem'><a href='/cot/schedule.html' class='mainmenulinkselected' >Update Schedule</a></li>
+					    {% if  page.name == 'schedule' and  page.category == 'cot'%}
+							<li class='lev2mainmenuitem'><a href='/cot/schedule.html' class='mainmenulinkselected' >Release Schedule</a></li>
 						{% else %}
-							<li class='lev2mainmenuitem'><a href='/cot/schedule.html' class='mainmenulink' >Update Schedule</a></li>
+							<li class='lev2mainmenuitem'><a href='/cot/schedule.html' class='mainmenulink' >Release Schedule</a></li>
 						{% endif %}												
 					</ul> <!-- lev2mainmenulist -->							
 					</li> <!-- lev1mainmenulist -->
 					
-					{% if  page.name == 'links' %}
+					{% if  page.name == 'links' and  page.category == 'cot'%}
 						<li class='lev1mainmenuitem'><a href='/links.html' class='mainmenulinkselected' >Links</a></li>
 					{% else %}
 						<li class='lev1mainmenuitem'><a href='/links.html' class='mainmenulink' >Links</a></li>

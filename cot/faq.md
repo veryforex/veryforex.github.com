@@ -4,6 +4,7 @@ title: Frequently asked questions
 name: faq
 category: cot
 tags: faq
+updated: 2012-5-08
 ---
 
 FAQ
